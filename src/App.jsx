@@ -1,36 +1,34 @@
-import './index.css';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-import ProtectedRoute from './routes/ProtectedRoute';
-import { AuthRoute } from './routes/AuthRoute';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-import DefaultLayout from './layout/DefaultLayout';
-import Home from './pages/dashboard/Home';
 import Register from './pages/Register';
+import Home from './pages/dashboard/Home';
+import DefaultLayout from './layout/DefaultLayout';
+import { AuthRoute } from './routes/AuthRoute';
+import ProtectedRoute from './routes/ProtectedRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-
   return (
-   <BrowserRouter>
-   <Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AuthRoute><Login /></AuthRoute>} />
+        <Route path="/login" element={<AuthRoute><Login /></AuthRoute>} />
+        <Route path="/register" element={<AuthRoute><Register /></AuthRoute>} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DefaultLayout>
+                <Home />
+              </DefaultLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </Routes>
 
-      <Route path="/" element={<AuthRoute>
-      </AuthRoute>} />
-  
-    <Route path="/login" element={<AuthRoute>
-      <Login />
-    </AuthRoute>} />
-    <Route path="/register" element={<AuthRoute>
-      <Register />
-    </AuthRoute>} />
-    <Route path='/dashboard' element={<ProtectedRoute>
-        <DefaultLayout>
-          <Home />
-        </DefaultLayout>
-    </ProtectedRoute>} />
-   </Routes>
-   <ToastContainer
+      <ToastContainer
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
@@ -39,10 +37,10 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light" // or "dark"
+        theme="light"
       />
-   </BrowserRouter>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

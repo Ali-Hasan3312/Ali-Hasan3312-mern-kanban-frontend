@@ -10,5 +10,5 @@ export const AuthRoute = ({ children }) => {
     return <Navigate to="/dashboard" replace />;
   } 
   
-  return children;
+  return children || null;
 }
