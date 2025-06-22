@@ -2,7 +2,7 @@ import React from 'react'
 import { FiPlus } from 'react-icons/fi';
 import { MdOutlineViewAgenda } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
-import Tasks from '../../components/Tasks/Tasks';
+import Tasks from '../../components/tasks/Tasks';
 const Home = () => {
   return (
     <>
