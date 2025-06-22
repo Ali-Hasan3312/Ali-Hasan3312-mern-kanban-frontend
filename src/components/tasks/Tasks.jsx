@@ -6,7 +6,6 @@ import AddTaskModal from '../modals/AddTaskModal';
 import Card from './Card';
 import { useLocation } from 'react-router';
 
-
 const Tasks = () => {
     const [statusList, setStatusList] = useState(['Todo', 'In Progress', 'Done']);
   const [tasks, setTasks] = useState([]);
