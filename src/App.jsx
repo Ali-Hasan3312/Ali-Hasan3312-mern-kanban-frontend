@@ -1,6 +1,6 @@
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Login from './pages/login';
+import Login from './pages/Login';
 import ProtectedRoute from './routes/ProtectedRoute';
 import { AuthRoute } from './routes/AuthRoute';
 import 'react-toastify/dist/ReactToastify.css';
