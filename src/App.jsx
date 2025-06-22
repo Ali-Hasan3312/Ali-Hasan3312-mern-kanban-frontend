@@ -7,7 +7,7 @@ import { AuthRoute } from './routes/AuthRoute';
 import ProtectedRoute from './routes/ProtectedRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import './index.css'
 function App() {
   return (
     <BrowserRouter>
